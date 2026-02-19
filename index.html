@@ -593,6 +593,152 @@ footer {
 footer a { color: var(--text2); text-decoration: none; }
 footer a:hover { color: var(--accent); }
 
+/* ── GUIDES TABS ── */
+.guide-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.guide-tab {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-family: 'Onest', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.guide-tab:hover {
+  border-color: rgba(0,229,160,0.3);
+  color: var(--text);
+}
+
+.guide-tab.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.guide-content {
+  display: none;
+  animation: fadeUp 0.4s ease;
+}
+
+.guide-content.active {
+  display: block;
+}
+
+.guide-app {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.guide-app-info h3 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.guide-app-info p {
+  color: var(--text2);
+  font-size: 0.9rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.btn-download:hover {
+  background: var(--accent2);
+  transform: translateY(-1px);
+}
+
+.guide-steps {
+  display: grid;
+  gap: 16px;
+}
+
+.guide-step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all 0.3s;
+}
+
+.guide-step:hover {
+  border-color: rgba(0,229,160,0.15);
+}
+
+.guide-step-num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--accent);
+  opacity: 0.5;
+  min-width: 32px;
+}
+
+.guide-step-text h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.guide-step-text p {
+  color: var(--text2);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.guide-note {
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: rgba(0,229,160,0.04);
+  border: 1px solid rgba(0,229,160,0.12);
+  border-radius: 14px;
+  color: var(--text2);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.guide-note strong {
+  color: var(--accent);
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -627,6 +773,10 @@ footer a:hover { color: var(--accent); }
   .features-grid { grid-template-columns: 1fr; }
   .cta-box { padding: 50px 24px; }
   section { padding: 70px 20px; }
+  .guide-tabs { gap: 8px; }
+  .guide-tab { padding: 8px 16px; font-size: 0.85rem; }
+  .guide-app { padding: 24px; flex-direction: column; align-items: flex-start; }
+  .guide-step { padding: 20px; gap: 14px; }
 }
 </style>
 </head>
@@ -643,6 +793,7 @@ footer a:hover { color: var(--accent); }
     <a href="#servers" class="nav-link">Серверы</a>
     <a href="#pricing" class="nav-link">Цены</a>
     <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#guides" class="nav-link">Инструкции</a>
     <a href="https://t.me/VPNplacewowbot" class="btn-nav">Подключить</a>
   </div>
 </nav>
@@ -820,6 +971,247 @@ footer a:hover { color: var(--accent); }
   </div>
 </section>
 
+<!-- GUIDES -->
+<section id="guides">
+  <h2 class="section-title reveal">Инструкции по установке</h2>
+  <p class="section-sub reveal">Выберите вашу платформу</p>
+
+  <div class="guide-tabs reveal">
+    <button class="guide-tab active" data-tab="android">📱 Android</button>
+    <button class="guide-tab" data-tab="ios">🍎 iPhone / iPad</button>
+    <button class="guide-tab" data-tab="windows">💻 Windows</button>
+    <button class="guide-tab" data-tab="macos">🖥 macOS</button>
+    <button class="guide-tab" data-tab="tv">📺 TV</button>
+  </div>
+
+  <!-- ANDROID -->
+  <div class="guide-content active" id="guide-android">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>v2RayTun</h3>
+        <p>Бесплатное приложение для Android</p>
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.v2raytun.android" target="_blank" class="btn-download">Скачать в Google Play</a>
+    </div>
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Получите ссылку подписки</h4>
+          <p>Откройте бота <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram, оплатите тариф и скопируйте ссылку подписки.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Установите v2RayTun</h4>
+          <p>Скачайте приложение из Google Play и откройте его.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Импортируйте подписку</h4>
+          <p>Нажмите «+» в правом верхнем углу, выберите «Импорт из буфера обмена». Разрешите вставку, если появится запрос.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Подключитесь</h4>
+          <p>На главном экране появится подписка PlaceVPN с тремя серверами. Выберите локацию и нажмите синюю кнопку для подключения.</p>
+        </div>
+      </div>
+    </div>
+    <div class="guide-note">
+      <strong>Совет:</strong> Если Google Play недоступен — скачайте APK v2RayTun напрямую с <a href="https://github.com/nicksav/v2raytun-android/releases" target="_blank" style="color:var(--accent)">GitHub</a>.
+    </div>
+  </div>
+
+  <!-- iOS -->
+  <div class="guide-content" id="guide-ios">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>Streisand</h3>
+        <p>Бесплатное приложение для iPhone и iPad</p>
+      </div>
+      <a href="https://apps.apple.com/app/streisand/id6450534064" target="_blank" class="btn-download">Скачать в App Store</a>
+    </div>
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Получите ссылку подписки</h4>
+          <p>Откройте бота <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram, оплатите тариф и скопируйте ссылку подписки.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Установите Streisand</h4>
+          <p>Скачайте приложение из App Store и откройте его.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Добавьте подписку</h4>
+          <p>Нажмите «+» в верхнем правом углу, выберите «Добавить из буфера обмена». Разрешите вставку при необходимости.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Подключитесь</h4>
+          <p>Выберите один из трёх серверов (Финляндия, Нидерланды, Германия) и нажмите кнопку подключения. Разрешите VPN-конфигурацию при первом запуске.</p>
+        </div>
+      </div>
+    </div>
+    <div class="guide-note">
+      <strong>Совет:</strong> Также подходит приложение <a href="https://apps.apple.com/ru/app/v2raytun/id6476628951" target="_blank" style="color:var(--accent)">v2RayTun</a> для iOS — установка аналогична.
+    </div>
+  </div>
+
+  <!-- WINDOWS -->
+  <div class="guide-content" id="guide-windows">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>Hiddify</h3>
+        <p>Бесплатная программа для Windows</p>
+      </div>
+      <a href="https://github.com/hiddify/hiddify-app/releases/latest" target="_blank" class="btn-download">Скачать с GitHub</a>
+    </div>
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Получите ссылку подписки</h4>
+          <p>Откройте бота <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram, оплатите тариф и скопируйте ссылку подписки.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Установите Hiddify</h4>
+          <p>Скачайте установщик с GitHub (файл .exe), запустите и установите программу.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Добавьте подписку</h4>
+          <p>При первом запуске нажмите «Новый профиль», затем «Добавить из буфера обмена». Ссылка подписки автоматически импортируется.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Включите TUN-режим</h4>
+          <p>В настройках убедитесь, что включён режим TUN — это направит весь трафик через VPN. Запускайте программу от имени администратора.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">5</div>
+        <div class="guide-step-text">
+          <h4>Подключитесь</h4>
+          <p>Выберите сервер и нажмите кнопку подключения. Три локации доступны в списке.</p>
+        </div>
+      </div>
+    </div>
+    <div class="guide-note">
+      <strong>Важно:</strong> Отключите другие VPN и прокси перед запуском. Если Hiddify не подходит — попробуйте <a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" style="color:var(--accent)">v2rayN</a> (добавьте подписку через «Серверы > Импорт из буфера»).
+    </div>
+  </div>
+
+  <!-- macOS -->
+  <div class="guide-content" id="guide-macos">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>Streisand</h3>
+        <p>Бесплатное приложение для macOS</p>
+      </div>
+      <a href="https://apps.apple.com/app/streisand/id6450534064" target="_blank" class="btn-download">Скачать в App Store</a>
+    </div>
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Получите ссылку подписки</h4>
+          <p>Откройте бота <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram, оплатите тариф и скопируйте ссылку.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Установите Streisand</h4>
+          <p>Скачайте из App Store (работает на Apple Silicon и Intel). Откройте приложение.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Добавьте подписку</h4>
+          <p>Нажмите «+», выберите «Импорт из буфера обмена». Подписка PlaceVPN появится в списке.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Подключитесь</h4>
+          <p>Выберите сервер и нажмите кнопку подключения. Разрешите установку VPN-конфигурации при первом запуске.</p>
+        </div>
+      </div>
+    </div>
+    <div class="guide-note">
+      <strong>Альтернатива:</strong> Для macOS также подходит <a href="https://github.com/hiddify/hiddify-app/releases/latest" target="_blank" style="color:var(--accent)">Hiddify</a> (скачайте .dmg версию).
+    </div>
+  </div>
+
+  <!-- TV -->
+  <div class="guide-content" id="guide-tv">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>v2RayTun</h3>
+        <p>Для Android TV, Яндекс ТВ, TV-приставок</p>
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.v2raytun.android" target="_blank" class="btn-download">Скачать в Google Play</a>
+    </div>
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Установите v2RayTun</h4>
+          <p>Откройте Google Play на вашем телевизоре и установите приложение v2RayTun.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Получите ссылку</h4>
+          <p>На телефоне откройте бота <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a>, скопируйте ссылку подписки.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Введите ссылку вручную</h4>
+          <p>В v2RayTun на ТВ нажмите «Ручной ввод» и аккуратно введите ссылку подписки с помощью пульта.</p>
+        </div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Подключитесь</h4>
+          <p>После добавления подписки выберите сервер и нажмите кнопку подключения.</p>
+        </div>
+      </div>
+    </div>
+    <div class="guide-note">
+      <strong>Совет:</strong> Для удобного ввода ссылки подключите USB-клавиатуру к ТВ или приставке. Также можно использовать приложение-пульт на телефоне для набора текста.
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq">
   <h2 class="section-title reveal">Вопросы и ответы</h2>
@@ -890,6 +1282,16 @@ document.querySelectorAll('.faq-q').forEach(q => {
       if (i !== item) i.classList.remove('open');
     });
     item.classList.toggle('open');
+  });
+});
+
+// Guide tabs
+document.querySelectorAll('.guide-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.guide-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('guide-' + tab.dataset.tab).classList.add('active');
   });
 });
 
