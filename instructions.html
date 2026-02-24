@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Инструкция по подключению — PlaceVPN</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta name="description" content="Пошаговая инструкция по подключению PlaceVPN на Android, iPhone, Windows и macOS. Скачайте приложение и настройте VPN за 2 минуты.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #12121a;
+  --bg3: #1a1a26;
+  --accent: #00e5a0;
+  --accent2: #00c48c;
+  --accent-glow: rgba(0, 229, 160, 0.15);
+  --text: #f0f0f5;
+  --text2: #9898a8;
+  --border: rgba(255,255,255,0.06);
+  --card: rgba(255,255,255,0.03);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Onest', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.glow-1, .glow-2 {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+.glow-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,229,160,0.08), transparent 70%);
+  top: -200px; right: -100px;
+}
+.glow-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,100,255,0.06), transparent 70%);
+  bottom: 20%; left: -150px;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+  background: rgba(10,10,15,0.8);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-bolt {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+nav a.nav-link {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+nav a.nav-link:hover { color: var(--text); }
+nav a.nav-link.active { color: var(--accent); }
+
+.nav-links { display: flex; gap: 32px; align-items: center; }
+
+.btn-nav {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+.btn-nav:hover { background: var(--accent2); transform: translateY(-1px); }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  padding: 160px 20px 60px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.page-header h1 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  animation: fadeUp 0.8s ease;
+}
+
+.page-header h1 .gradient {
+  background: linear-gradient(135deg, var(--accent), #00b4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-header p {
+  color: var(--text2);
+  font-size: 1.1rem;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 60px 20px 100px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text2);
+  font-size: 1.05rem;
+  margin-bottom: 60px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── GUIDE TABS ── */
+.guide-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+
+.guide-tab {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: 'Onest', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.guide-tab:hover {
+  border-color: rgba(0,229,160,0.3);
+  color: var(--text);
+}
+
+.guide-tab.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.guide-content {
+  display: none;
+  animation: fadeUp 0.4s ease;
+}
+
+.guide-content.active {
+  display: block;
+}
+
+/* ── APP CARD ── */
+.guide-app {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.guide-app-info h3 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.guide-app-info p {
+  color: var(--text2);
+  font-size: 0.9rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.btn-download:hover {
+  background: var(--accent2);
+  transform: translateY(-1px);
+}
+
+/* ── STEPS ── */
+.guide-steps {
+  display: grid;
+  gap: 16px;
+}
+
+.guide-step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all 0.3s;
+}
+
+.guide-step:hover {
+  border-color: rgba(0,229,160,0.15);
+}
+
+.guide-step-num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--accent);
+  opacity: 0.5;
+  min-width: 32px;
+  flex-shrink: 0;
+}
+
+.guide-step-text {
+  flex: 1;
+}
+
+.guide-step-text h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.guide-step-text p {
+  color: var(--text2);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ── SCREENSHOT PLACEHOLDER ── */
+.screenshot {
+  margin-top: 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px dashed rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.screenshot-icon {
+  font-size: 2rem;
+  opacity: 0.4;
+}
+
+/* ── NOTES ── */
+.guide-note {
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: rgba(0,229,160,0.04);
+  border: 1px solid rgba(0,229,160,0.12);
+  border-radius: 14px;
+  color: var(--text2);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.guide-note strong {
+  color: var(--accent);
+}
+
+/* ── WHITELIST SECTION ── */
+.whitelist-section {
+  margin-top: 32px;
+  padding: 28px 28px;
+  background: rgba(0,100,255,0.03);
+  border: 1px solid rgba(0,100,255,0.1);
+  border-radius: 16px;
+}
+
+.whitelist-section h4 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.whitelist-section p {
+  color: var(--text2);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.whitelist-list {
+  list-style: none;
+  padding: 0;
+}
+
+.whitelist-list li {
+  color: var(--text2);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  padding-left: 20px;
+  position: relative;
+}
+
+.whitelist-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ── TIPS GRID ── */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.tip-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s;
+}
+
+.tip-card:hover {
+  border-color: rgba(0,229,160,0.15);
+  transform: translateY(-2px);
+}
+
+.tip-card .tip-icon {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.tip-card h4 {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.tip-card p {
+  color: var(--text2);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* ── CTA ── */
+.cta-section {
+  text-align: center;
+  padding: 60px 20px 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, rgba(0,229,160,0.08), rgba(0,100,255,0.05));
+  border: 1px solid rgba(0,229,160,0.15);
+  border-radius: 32px;
+  padding: 80px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-box h2 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 16px;
+}
+
+.cta-box p {
+  color: var(--text2);
+  margin-bottom: 36px;
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 16px 36px;
+  border-radius: 60px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s;
+  box-shadow: 0 0 40px rgba(0,229,160,0.2);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px rgba(0,229,160,0.3);
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text2);
+  font-size: 0.85rem;
+}
+
+footer a { color: var(--text2); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .page-header { padding: 120px 20px 40px; }
+  .page-header h1 { font-size: 1.8rem; }
+  section { padding: 40px 16px 80px; }
+  .guide-tabs { gap: 8px; }
+  .guide-tab { padding: 10px 18px; font-size: 0.85rem; }
+  .guide-app { padding: 24px; flex-direction: column; align-items: flex-start; }
+  .guide-step { padding: 20px; gap: 14px; flex-direction: column; }
+  .guide-step-num { font-size: 1.1rem; }
+  .tips-grid { grid-template-columns: 1fr; }
+  .cta-box { padding: 50px 24px; }
+  .screenshot { padding: 32px 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="glow-1"></div>
+<div class="glow-2"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo"><span class="logo-bolt">⚡</span> PlaceVPN</a>
+  <div class="nav-links">
+    <a href="/#features" class="nav-link">Преимущества</a>
+    <a href="/#servers" class="nav-link">Серверы</a>
+    <a href="/#pricing" class="nav-link">Цены</a>
+    <a href="/#faq" class="nav-link">FAQ</a>
+    <a href="/instructions.html" class="nav-link active">Инструкции</a>
+    <a href="https://t.me/VPNplacewowbot" class="btn-nav">Подключить</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Настройка <span class="gradient">VPN</span></h1>
+  <p>Пошаговая инструкция по подключению PlaceVPN на вашем устройстве. Выберите платформу и следуйте шагам — подключение займёт 2 минуты.</p>
+</div>
+
+<!-- GUIDES -->
+<section>
+  <div class="guide-tabs">
+    <button class="guide-tab active" data-tab="android">📱 Android</button>
+    <button class="guide-tab" data-tab="ios">🍎 iPhone / iPad</button>
+    <button class="guide-tab" data-tab="windows">💻 Windows</button>
+    <button class="guide-tab" data-tab="macos">🖥 macOS</button>
+  </div>
+
+  <!-- ═══════════════ ANDROID ═══════════════ -->
+  <div class="guide-content active" id="guide-android">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>v2RayTun</h3>
+        <p>Бесплатное приложение для Android</p>
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.v2raytun.android" target="_blank" class="btn-download">Скачать в Google Play</a>
+    </div>
+
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Купите подписку через бота</h4>
+          <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram. Выберите тариф и оплатите. После оплаты бот пришлёт ссылку подписки — скопируйте её.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: получение ссылки в Telegram-боте
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Установите v2RayTun</h4>
+          <p>Скачайте приложение из Google Play по кнопке выше и откройте его. Если Google Play недоступен — скачайте APK с <a href="https://github.com/nicksav/v2raytun-android/releases" target="_blank" style="color:var(--accent)">GitHub</a>.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: главный экран v2RayTun
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Импортируйте подписку</h4>
+          <p>Нажмите кнопку <strong>«+»</strong> в правом верхнем углу приложения. Выберите <strong>«Импорт из буфера обмена»</strong>. Если появится запрос на разрешение вставки — подтвердите.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: импорт подписки из буфера обмена
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Выберите сервер и подключитесь</h4>
+          <p>На главном экране появится подписка PlaceVPN с тремя серверами (Финляндия, Нидерланды, Германия). Выберите ближайшую локацию и нажмите <strong>синюю кнопку</strong> для подключения. При первом запуске разрешите VPN-конфигурацию.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: выбор сервера и кнопка подключения
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-note">
+      <strong>Совет:</strong> Для обновления серверов нажмите на иконку обновления рядом с подпиской. Серверы обновляются автоматически.
+    </div>
+
+    <div class="whitelist-section">
+      <h4>🛡 Белый список приложений</h4>
+      <p>Некоторые приложения (банки, госуслуги) могут работать некорректно через VPN. Добавьте их в белый список, чтобы они использовали прямое подключение:</p>
+      <ul class="whitelist-list">
+        <li>Откройте настройки v2RayTun (⚙ иконка шестерёнки)</li>
+        <li>Найдите раздел <strong>«Per-app Proxy»</strong> или <strong>«Разделение приложений»</strong></li>
+        <li>Выберите режим <strong>«Обходить VPN»</strong> и отметьте нужные приложения</li>
+        <li>Рекомендуем исключить: Сбербанк, Тинькофф, Госуслуги, банковские приложения</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════ iOS ═══════════════ -->
+  <div class="guide-content" id="guide-ios">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>Streisand</h3>
+        <p>Бесплатное приложение для iPhone и iPad</p>
+      </div>
+      <a href="https://apps.apple.com/app/streisand/id6450534064" target="_blank" class="btn-download">Скачать в App Store</a>
+    </div>
+
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Купите подписку через бота</h4>
+          <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram. Выберите тариф и оплатите. После оплаты бот пришлёт ссылку подписки — скопируйте её.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: копирование ссылки из бота
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Установите Streisand</h4>
+          <p>Скачайте приложение из App Store по кнопке выше. Откройте его после установки.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: Streisand в App Store
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Добавьте подписку</h4>
+          <p>Нажмите <strong>«+»</strong> в правом верхнем углу, выберите <strong>«Добавить из буфера обмена»</strong>. При необходимости разрешите приложению доступ к буферу обмена.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: добавление подписки в Streisand
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Выберите сервер и подключитесь</h4>
+          <p>Выберите один из трёх серверов (Финляндия, Нидерланды, Германия) и нажмите кнопку подключения. При первом запуске iOS попросит разрешение на добавление VPN-конфигурации — нажмите <strong>«Разрешить»</strong> и подтвердите через Face ID / Touch ID.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: разрешение VPN-конфигурации на iOS
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-note">
+      <strong>Альтернатива:</strong> Также подходит приложение <a href="https://apps.apple.com/ru/app/v2raytun/id6476628951" target="_blank" style="color:var(--accent)">v2RayTun для iOS</a> — установка аналогична.
+    </div>
+
+    <div class="whitelist-section">
+      <h4>🛡 Обход VPN для отдельных приложений</h4>
+      <p>iOS не поддерживает раздельное туннелирование на уровне приложений. Если банковские приложения не работают:</p>
+      <ul class="whitelist-list">
+        <li>Временно отключите VPN для работы с банками и госуслугами</li>
+        <li>Используйте виджет на экране блокировки для быстрого вкл/выкл</li>
+        <li>В Streisand: настройте маршрутизацию по доменам в разделе <strong>«Routing»</strong></li>
+        <li>Добавьте домены банков в исключения (например, online.sberbank.ru)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════ WINDOWS ═══════════════ -->
+  <div class="guide-content" id="guide-windows">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>Hiddify</h3>
+        <p>Бесплатная программа для Windows</p>
+      </div>
+      <a href="https://github.com/hiddify/hiddify-app/releases/latest" target="_blank" class="btn-download">Скачать с GitHub</a>
+    </div>
+
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Купите подписку через бота</h4>
+          <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram (можно с телефона или через <a href="https://web.telegram.org" target="_blank" style="color:var(--accent)">Telegram Web</a>). Оплатите тариф и скопируйте ссылку подписки.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: получение ссылки подписки
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Установите Hiddify</h4>
+          <p>Скачайте установщик с GitHub (файл <strong>Hiddify-Windows-Setup-x64.exe</strong>). Запустите и следуйте инструкциям установки. Windows может показать предупреждение SmartScreen — нажмите <strong>«Подробнее» → «Выполнить в любом случае»</strong>.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: установка Hiddify на Windows
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Добавьте подписку</h4>
+          <p>При первом запуске нажмите <strong>«Новый профиль»</strong>, затем <strong>«Добавить из буфера обмена»</strong>. Ссылка подписки автоматически импортируется, и появятся три сервера PlaceVPN.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: импорт подписки в Hiddify
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Включите TUN-режим</h4>
+          <p>В настройках Hiddify убедитесь, что включён <strong>режим TUN</strong> — это направит весь трафик через VPN. Запускайте программу <strong>от имени администратора</strong> (правый клик → «Запуск от имени администратора»).</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: настройка TUN-режима
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">5</div>
+        <div class="guide-step-text">
+          <h4>Выберите сервер и подключитесь</h4>
+          <p>На главном экране выберите сервер из списка и нажмите кнопку подключения. Значок Hiddify в трее покажет статус соединения.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: подключение к серверу
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-note">
+      <strong>Альтернатива:</strong> Если Hiddify не подходит — попробуйте <a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" style="color:var(--accent)">v2rayN</a>. Добавьте подписку через меню <strong>«Серверы» → «Импорт из буфера обмена»</strong>.
+    </div>
+
+    <div class="whitelist-section">
+      <h4>🛡 Белый список программ</h4>
+      <p>Для корректной работы банковских приложений и других программ можно исключить их из VPN:</p>
+      <ul class="whitelist-list">
+        <li>В Hiddify откройте <strong>Настройки → Per-app Proxy</strong></li>
+        <li>Выберите режим <strong>«Bypass»</strong> (обход) для нужных программ</li>
+        <li>Рекомендуем исключить: браузер для онлайн-банкинга, клиенты банков</li>
+        <li>В v2rayN: используйте настройку маршрутизации для обхода российских доменов</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════ macOS ═══════════════ -->
+  <div class="guide-content" id="guide-macos">
+    <div class="guide-app">
+      <div class="guide-app-info">
+        <h3>Streisand</h3>
+        <p>Бесплатное приложение для macOS</p>
+      </div>
+      <a href="https://apps.apple.com/app/streisand/id6450534064" target="_blank" class="btn-download">Скачать в App Store</a>
+    </div>
+
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-text">
+          <h4>Купите подписку через бота</h4>
+          <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram. Оплатите тариф и скопируйте ссылку подписки.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: получение ссылки подписки
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-text">
+          <h4>Установите Streisand</h4>
+          <p>Скачайте из App Store по кнопке выше. Приложение работает на Apple Silicon (M1/M2/M3/M4) и Intel Mac. Откройте приложение после установки.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: Streisand на macOS
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-text">
+          <h4>Добавьте подписку</h4>
+          <p>Нажмите <strong>«+»</strong>, выберите <strong>«Импорт из буфера обмена»</strong>. Подписка PlaceVPN появится в списке с тремя серверами.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: добавление подписки
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-text">
+          <h4>Подключитесь</h4>
+          <p>Выберите сервер и нажмите кнопку подключения. macOS попросит разрешение на установку VPN-конфигурации — введите пароль учётной записи Mac и подтвердите.</p>
+          <div class="screenshot">
+            <span class="screenshot-icon">📸</span>
+            Скриншот: разрешение VPN на macOS
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-note">
+      <strong>Альтернатива:</strong> Для macOS также подходит <a href="https://github.com/hiddify/hiddify-app/releases/latest" target="_blank" style="color:var(--accent)">Hiddify</a> — скачайте .dmg версию с GitHub.
+    </div>
+
+    <div class="whitelist-section">
+      <h4>🛡 Обход VPN для отдельных сайтов</h4>
+      <p>В Streisand можно настроить маршрутизацию, чтобы российские сайты работали напрямую:</p>
+      <ul class="whitelist-list">
+        <li>Откройте настройки Streisand → раздел <strong>«Routing»</strong></li>
+        <li>Добавьте домены банков в список исключений</li>
+        <li>Примеры доменов: online.sberbank.ru, tinkoff.ru, gosuslugi.ru</li>
+        <li>Трафик к этим доменам будет идти напрямую, минуя VPN</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section>
+  <h2 class="section-title reveal">Полезные советы</h2>
+  <p class="section-sub reveal">Как получить максимум от VPN</p>
+
+  <div class="tips-grid reveal">
+    <div class="tip-card">
+      <span class="tip-icon">🏎</span>
+      <h4>Выбирайте ближайший сервер</h4>
+      <p>Финляндия обычно даёт наименьший пинг из России. Попробуйте все три и выберите самый быстрый.</p>
+    </div>
+    <div class="tip-card">
+      <span class="tip-icon">🔄</span>
+      <h4>Обновляйте подписку</h4>
+      <p>Если серверы не подключаются — обновите подписку в приложении. Конфигурации обновляются автоматически.</p>
+    </div>
+    <div class="tip-card">
+      <span class="tip-icon">🏦</span>
+      <h4>Белый список для банков</h4>
+      <p>Добавьте банковские приложения в исключения VPN — они могут блокировать вход через зарубежные IP.</p>
+    </div>
+    <div class="tip-card">
+      <span class="tip-icon">🔋</span>
+      <h4>Экономия батареи</h4>
+      <p>VPN потребляет минимум ресурсов. Но если нужно сэкономить заряд — отключайте VPN, когда он не нужен.</p>
+    </div>
+    <div class="tip-card">
+      <span class="tip-icon">❌</span>
+      <h4>Отключите другие VPN</h4>
+      <p>Перед подключением PlaceVPN убедитесь, что другие VPN и прокси отключены — они могут конфликтовать.</p>
+    </div>
+    <div class="tip-card">
+      <span class="tip-icon">💬</span>
+      <h4>Поддержка 24/7</h4>
+      <p>Если что-то не работает — напишите в поддержку через <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">Telegram-бота</a>. Мы поможем.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-box reveal">
+    <h2>Ещё не подключили VPN?</h2>
+    <p>Откройте бота, выберите тариф и подключитесь за 2 минуты.</p>
+    <a href="https://t.me/VPNplacewowbot" class="btn-primary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.65-2.89 7.99-3.45 3.81-1.58 4.6-1.86 5.12-1.87.11 0 .37.03.53.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg>
+      Подключить VPN
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 PlaceVPN · <a href="https://t.me/VPNplacewowbot">Telegram</a> · <a href="/">Главная</a> · Все права защищены</p>
+</footer>
+
+<script>
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Guide tabs
+document.querySelectorAll('.guide-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.guide-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('guide-' + tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
