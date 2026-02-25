@@ -335,6 +335,18 @@ section {
   opacity: 0.4;
 }
 
+.screenshot-img {
+  margin-top: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.screenshot-img img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
 /* ── NOTES ── */
 .guide-note {
   margin-top: 24px;
@@ -729,11 +741,10 @@ footer a:hover { color: var(--accent); }
       <div class="guide-step">
         <div class="guide-step-num">1</div>
         <div class="guide-step-text">
-          <h4>Купите подписку через бота</h4>
-          <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram (можно с телефона или через <a href="https://web.telegram.org" target="_blank" style="color:var(--accent)">Telegram Web</a>). Оплатите тариф и скопируйте ссылку подписки.</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: получение ссылки подписки
+          <h4>Скачайте Hiddify</h4>
+          <p>Перейдите на <a href="https://github.com/hiddify/hiddify-app/releases/latest" target="_blank" style="color:var(--accent)">GitHub</a> и скачайте <strong>Hiddify-Windows-Setup-x64.exe</strong>. Установите программу. Если Windows покажет предупреждение SmartScreen — нажмите <strong>«Подробнее» → «Выполнить в любом случае»</strong>.</p>
+          <div class="screenshot-img">
+            <img src="img/win-step1-download.jpg" alt="Скачиваем Hiddify с GitHub" loading="lazy">
           </div>
         </div>
       </div>
@@ -741,11 +752,10 @@ footer a:hover { color: var(--accent); }
       <div class="guide-step">
         <div class="guide-step-num">2</div>
         <div class="guide-step-text">
-          <h4>Установите Hiddify</h4>
-          <p>Скачайте установщик с GitHub (файл <strong>Hiddify-Windows-Setup-x64.exe</strong>). Запустите и следуйте инструкциям установки. Windows может показать предупреждение SmartScreen — нажмите <strong>«Подробнее» → «Выполнить в любом случае»</strong>.</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: установка Hiddify на Windows
+          <h4>Купите подписку через бота</h4>
+          <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram. Выберите тариф и оплатите картой любого банка РФ через ЮKassa.</p>
+          <div class="screenshot-img">
+            <img src="img/win-step2-bot.jpg" alt="Тарифы PlaceVPN в Telegram-боте" loading="lazy">
           </div>
         </div>
       </div>
@@ -753,11 +763,10 @@ footer a:hover { color: var(--accent); }
       <div class="guide-step">
         <div class="guide-step-num">3</div>
         <div class="guide-step-text">
-          <h4>Добавьте подписку</h4>
-          <p>При первом запуске нажмите <strong>«Новый профиль»</strong>, затем <strong>«Добавить из буфера обмена»</strong>. Ссылка подписки автоматически импортируется, и появятся три сервера PlaceVPN.</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: импорт подписки в Hiddify
+          <h4>Скопируйте ссылку подписки</h4>
+          <p>После оплаты бот пришлёт ссылку подписки. Нажмите на неё — она скопируется в буфер обмена.</p>
+          <div class="screenshot-img">
+            <img src="img/win-step3-copy.jpg" alt="Копируем ссылку подписки" loading="lazy">
           </div>
         </div>
       </div>
@@ -765,11 +774,10 @@ footer a:hover { color: var(--accent); }
       <div class="guide-step">
         <div class="guide-step-num">4</div>
         <div class="guide-step-text">
-          <h4>Включите TUN-режим</h4>
-          <p>В настройках Hiddify убедитесь, что включён <strong>режим TUN</strong> — это направит весь трафик через VPN. Запускайте программу <strong>от имени администратора</strong> (правый клик → «Запуск от имени администратора»).</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: настройка TUN-режима
+          <h4>Добавьте подписку в Hiddify</h4>
+          <p>Откройте Hiddify, нажмите <strong>«+»</strong> в правом верхнем углу, затем <strong>«Буфер обмена»</strong>. Подписка импортируется автоматически — появятся три сервера PlaceVPN.</p>
+          <div class="screenshot-img">
+            <img src="img/win-step4-clipboard.jpg" alt="Импорт подписки в Hiddify" loading="lazy">
           </div>
         </div>
       </div>
@@ -777,11 +785,10 @@ footer a:hover { color: var(--accent); }
       <div class="guide-step">
         <div class="guide-step-num">5</div>
         <div class="guide-step-text">
-          <h4>Выберите сервер и подключитесь</h4>
-          <p>На главном экране выберите сервер из списка и нажмите кнопку подключения. Значок Hiddify в трее покажет статус соединения.</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: подключение к серверу
+          <h4>Подключайтесь!</h4>
+          <p>Нажмите большую кнопку на главном экране. Статус изменится на <strong>«Подключено»</strong> — VPN работает. Hiddify автоматически выберет лучший сервер.</p>
+          <div class="screenshot-img">
+            <img src="img/win-step5-connected.png" alt="Hiddify подключён к PlaceVPN" loading="lazy">
           </div>
         </div>
       </div>
