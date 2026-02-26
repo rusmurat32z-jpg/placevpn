@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlaceVPN — Подключение</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .logo span { color: #00e5a0; }
+        .subtitle { color: #888; font-size: 14px; margin-bottom: 30px; }
+        .spinner {
+            width: 40px; height: 40px;
+            border: 3px solid #333;
+            border-top-color: #00e5a0;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .status { font-size: 16px; margin-bottom: 25px; color: #ccc; }
+        .btn {
+            display: inline-block;
+            background: #00e5a0;
+            color: #000;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 14px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            width: 100%;
+            margin-bottom: 12px;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.85; }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #333;
+            color: #fff;
+        }
+        .btn-outline:hover { border-color: #00e5a0; }
+        .apps { margin-top: 20px; }
+        .apps a { color: #00e5a0; text-decoration: none; font-size: 14px; margin: 0 10px; }
+        .apps a:hover { text-decoration: underline; }
+        .hidden { display: none; }
+        .copy-hint { color: #888; font-size: 13px; margin-top: 15px; }
+        .sub-url {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 12px;
+            color: #00e5a0;
+            word-break: break-all;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+        .success { color: #00e5a0; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">⚡ Place<span>VPN</span></div>
+        <div class="subtitle">Быстрый VPN для России</div>
+
+        <!-- Состояние 1: Автоперенаправление -->
+        <div id="redirecting">
+            <div class="spinner"></div>
+            <div class="status">Открываем приложение...</div>
+        </div>
+
+        <!-- Состояние 2: Кнопки (если авторедирект не сработал) -->
+        <div id="buttons" class="hidden">
+            <div class="status">Нажмите кнопку, чтобы добавить VPN в приложение:</div>
+
+            <a id="btn-v2raytun" class="btn" href="#">
+                📱 Открыть в v2RayTun
+            </a>
+
+            <a id="btn-streisand" class="btn btn-outline" href="#">
+                🍎 Открыть в Streisand
+            </a>
+
+            <a id="btn-hiddify" class="btn btn-outline" href="#">
+                💻 Открыть в Hiddify
+            </a>
+
+            <div class="sub-url" id="sub-url" onclick="copyUrl()"></div>
+            <div class="copy-hint" id="copy-hint">👆 Нажмите, чтобы скопировать ссылку</div>
+        </div>
+
+        <div class="apps">
+            <a href="https://apps.apple.com/ru/app/v2raytun/id6476628951">iPhone</a>
+            <a href="https://play.google.com/store/apps/details?id=com.v2raytun.android">Android</a>
+            <a href="https://github.com/hiddify/hiddify-app/releases/latest">Windows</a>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const subUrl = params.get('url') || params.get('sub');
+        const app = params.get('app') || 'v2raytun';
+
+        if (!subUrl) {
+            document.getElementById('redirecting').innerHTML =
+                '<div class="status">❌ Ссылка недействительна.<br>Получите новую в <a href="https://t.me/VPNplacewowbot" style="color:#00e5a0">Telegram-боте</a></div>';
+        } else {
+            // Deep links для приложений
+            const deepLinks = {
+                v2raytun: 'v2raytun://import/' + subUrl,
+                streisand: 'streisand://import/' + subUrl,
+                hiddify: 'hiddify://import/' + subUrl,
+            };
+
+            // Заполняем кнопки
+            document.getElementById('btn-v2raytun').href = deepLinks.v2raytun;
+            document.getElementById('btn-streisand').href = deepLinks.streisand;
+            document.getElementById('btn-hiddify').href = deepLinks.hiddify;
+            document.getElementById('sub-url').textContent = subUrl;
+
+            // Авторедирект через 500ms
+            setTimeout(() => {
+                try {
+                    window.location.href = deepLinks[app] || deepLinks.v2raytun;
+                } catch(e) {}
+
+                // Через 2 сек показываем кнопки (если приложение не открылось)
+                setTimeout(() => {
+                    document.getElementById('redirecting').classList.add('hidden');
+                    document.getElementById('buttons').classList.remove('hidden');
+                }, 2000);
+            }, 500);
+        }
+
+        function copyUrl() {
+            if (!subUrl) return;
+            navigator.clipboard.writeText(subUrl).then(() => {
+                document.getElementById('copy-hint').innerHTML = '<span class="success">✅ Скопировано!</span>';
+                setTimeout(() => {
+                    document.getElementById('copy-hint').textContent = '👆 Нажмите, чтобы скопировать ссылку';
+                }, 3000);
+            }).catch(() => {
+                // Fallback
+                const el = document.createElement('textarea');
+                el.value = subUrl;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                document.getElementById('copy-hint').innerHTML = '<span class="success">✅ Скопировано!</span>';
+            });
+        }
+    </script>
+</body>
+</html>
