@@ -95,8 +95,8 @@
                 📱 Открыть в v2RayTun
             </a>
 
-            <a id="btn-streisand" class="btn btn-outline" href="#">
-                🍎 Открыть в Streisand
+            <a id="btn-v2box" class="btn btn-outline" href="#">
+                🍎 Открыть в V2Box
             </a>
 
             <a id="btn-hiddify" class="btn btn-outline" href="#">
@@ -108,7 +108,7 @@
         </div>
 
         <div class="apps">
-            <a href="https://apps.apple.com/ru/app/v2raytun/id6476628951">iPhone</a>
+            <a href="https://apps.apple.com/ru/app/v2box-v2ray-client/id6446814690">iPhone</a>
             <a href="https://play.google.com/store/apps/details?id=com.v2raytun.android">Android</a>
             <a href="https://github.com/hiddify/hiddify-app/releases/latest">Windows</a>
         </div>
@@ -126,13 +126,13 @@
             // Deep links для приложений
             const deepLinks = {
                 v2raytun: 'v2raytun://import/' + subUrl,
-                streisand: 'streisand://import/' + subUrl,
+                v2box: 'v2box://import/' + subUrl,
                 hiddify: 'hiddify://import/' + subUrl,
             };
 
             // Заполняем кнопки
             document.getElementById('btn-v2raytun').href = deepLinks.v2raytun;
-            document.getElementById('btn-streisand').href = deepLinks.streisand;
+            document.getElementById('btn-v2box').href = deepLinks.v2box;
             document.getElementById('btn-hiddify').href = deepLinks.hiddify;
             document.getElementById('sub-url').textContent = subUrl;
 
