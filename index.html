@@ -740,6 +740,46 @@ footer a:hover { color: var(--accent); }
 }
 
 /* ── ANIMATIONS ── */
+
+.guide-step-img {
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  max-width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.guide-step-img:hover {
+  transform: scale(1.02);
+}
+
+.guide-step-img.phone {
+  max-width: 280px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -995,6 +1035,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Получите ссылку подписки</h4>
           <p>Откройте бота <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram, оплатите тариф и скопируйте ссылку подписки.</p>
+          <img src="img/android-step1-bot.jpg" alt="Получите ссылку подписки" class="guide-step-img phone" onclick="openLightbox(this.src)">
         </div>
       </div>
       <div class="guide-step">
@@ -1002,6 +1043,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Установите v2RayTun</h4>
           <p>Скачайте приложение из Google Play и откройте его.</p>
+          <img src="img/android-step2-install.jpg" alt="Установите v2RayTun" class="guide-step-img phone" onclick="openLightbox(this.src)">
         </div>
       </div>
       <div class="guide-step">
@@ -1009,6 +1051,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Импортируйте подписку</h4>
           <p>Нажмите «+» в правом верхнем углу, выберите «Импорт из буфера обмена». Разрешите вставку, если появится запрос.</p>
+          <img src="img/android-step3-import.jpg" alt="Импортируйте подписку" class="guide-step-img phone" onclick="openLightbox(this.src)">
         </div>
       </div>
       <div class="guide-step">
@@ -1039,6 +1082,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Получите ссылку подписки</h4>
           <p>Откройте бота <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram, оплатите тариф и скопируйте ссылку подписки.</p>
+          <img src="img/ios-step1-bot.jpg" alt="Получите ссылку подписки" class="guide-step-img phone" onclick="openLightbox(this.src)">
         </div>
       </div>
       <div class="guide-step">
@@ -1046,6 +1090,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Установите Streisand</h4>
           <p>Скачайте приложение из App Store и откройте его.</p>
+          <img src="img/ios-step2-install.jpg" alt="Установите Streisand" class="guide-step-img phone" onclick="openLightbox(this.src)">
         </div>
       </div>
       <div class="guide-step">
@@ -1053,6 +1098,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Добавьте подписку</h4>
           <p>Нажмите «+» в верхнем правом углу, выберите «Добавить из буфера обмена». Разрешите вставку при необходимости.</p>
+          <img src="img/ios-step3-import.jpg" alt="Добавьте подписку" class="guide-step-img phone" onclick="openLightbox(this.src)">
         </div>
       </div>
       <div class="guide-step">
@@ -1298,6 +1344,20 @@ document.querySelectorAll('nav a[href^="#"]').forEach(a => {
     document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
   });
 });
+</script>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
 </script>
 </body>
 </html>
