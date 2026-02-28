@@ -628,10 +628,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Купите подписку через бота</h4>
           <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram. Выберите тариф и оплатите. После оплаты бот пришлёт ссылку подписки — скопируйте её.</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: получение ссылки в Telegram-боте
-          </div>
+          <div class="screenshot-img"><img src="img/android-step1-bot.png" alt="Получение ссылки в боте" onclick="openLightbox(this.src)"></div>
         </div>
       </div>
 
@@ -640,10 +637,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Установите v2RayTun</h4>
           <p>Скачайте приложение из Google Play по кнопке выше и откройте его. Если Google Play недоступен — скачайте APK с <a href="https://github.com/nicksav/v2raytun-android/releases" target="_blank" style="color:var(--accent)">GitHub</a>.</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: главный экран v2RayTun
-          </div>
+          <div class="screenshot-img"><img src="img/android-step2-install.jpg" alt="Установка v2RayTun" onclick="openLightbox(this.src)"></div>
         </div>
       </div>
 
@@ -652,10 +646,8 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Импортируйте подписку</h4>
           <p>Нажмите кнопку <strong>«+»</strong> в правом верхнем углу приложения. Выберите <strong>«Импорт из буфера обмена»</strong>. Если появится запрос на разрешение вставки — подтвердите.</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: импорт подписки из буфера обмена
-          </div>
+          <div class="screenshot-img"><img src="img/android-step3-plus.jpg" alt="Нажмите +" onclick="openLightbox(this.src)"></div>
+          <div class="screenshot-img"><img src="img/android-step3-import.jpg" alt="Импорт из буфера обмена" onclick="openLightbox(this.src)"></div>
         </div>
       </div>
 
@@ -664,10 +656,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Выберите сервер и подключитесь</h4>
           <p>На главном экране появится подписка PlaceVPN с двумя серверами (Финляндия и Нидерланды). Выберите ближайшую локацию и нажмите <strong>синюю кнопку</strong> для подключения. При первом запуске разрешите VPN-конфигурацию.</p>
-          <div class="screenshot">
-            <span class="screenshot-icon">📸</span>
-            Скриншот: выбор сервера и кнопка подключения
-          </div>
+          <div class="screenshot-img"><img src="img/android-step4-connect.jpg" alt="Выбор сервера и подключение" onclick="openLightbox(this.src)"></div>
         </div>
       </div>
     </div>
@@ -1019,6 +1008,15 @@ document.querySelectorAll('.guide-tab').forEach(tab => {
     document.getElementById('guide-' + tab.dataset.tab).classList.add('active');
   });
 });
+</script>
+
+<!-- Lightbox -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10000;align-items:center;justify-content:center;cursor:zoom-out" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" style="max-width:90vw;max-height:90vh;border-radius:12px">
+</div>
+<script>
+function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').style.display='flex'}
+function closeLightbox(){document.getElementById('lightbox').style.display='none'}
 </script>
 </body>
 </html>
