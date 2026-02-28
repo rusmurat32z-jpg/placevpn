@@ -335,6 +335,47 @@ section {
   opacity: 0.4;
 }
 
+
+.screenshot-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.screenshot-toggle:hover {
+  background: rgba(0,229,160,0.08);
+  border-color: rgba(0,229,160,0.2);
+}
+
+.screenshot-toggle .arrow {
+  transition: transform 0.3s;
+  font-size: 0.7rem;
+}
+
+.screenshot-toggle.open .arrow {
+  transform: rotate(90deg);
+}
+
+.screenshot-collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.screenshot-collapsible.open {
+  max-height: 800px;
+}
+
 .screenshot-img {
   margin-top: 16px;
   border-radius: 12px;
@@ -628,7 +669,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Купите подписку через бота</h4>
           <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram. Выберите тариф и оплатите. После оплаты бот пришлёт ссылку подписки — скопируйте её.</p>
-          <div class="screenshot-img"><img src="img/android-step1-bot.png" alt="Получение ссылки в боте" onclick="openLightbox(this.src)"></div>
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img"><img src="img/android-step1-bot.png" alt="Получение ссылки в боте" onclick="openLightbox(this.src)"></div></div>
         </div>
       </div>
 
@@ -637,7 +678,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Установите v2RayTun</h4>
           <p>Скачайте приложение из Google Play по кнопке выше и откройте его. Если Google Play недоступен — скачайте APK с <a href="https://github.com/nicksav/v2raytun-android/releases" target="_blank" style="color:var(--accent)">GitHub</a>.</p>
-          <div class="screenshot-img"><img src="img/android-step2-install.jpg" alt="Установка v2RayTun" onclick="openLightbox(this.src)"></div>
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img"><img src="img/android-step2-install.jpg" alt="Установка v2RayTun" onclick="openLightbox(this.src)"></div></div>
         </div>
       </div>
 
@@ -646,8 +687,8 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Импортируйте подписку</h4>
           <p>Нажмите кнопку <strong>«+»</strong> в правом верхнем углу приложения. Выберите <strong>«Импорт из буфера обмена»</strong>. Если появится запрос на разрешение вставки — подтвердите.</p>
-          <div class="screenshot-img"><img src="img/android-step3-plus.jpg" alt="Нажмите +" onclick="openLightbox(this.src)"></div>
-          <div class="screenshot-img"><img src="img/android-step3-import.jpg" alt="Импорт из буфера обмена" onclick="openLightbox(this.src)"></div>
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img"><img src="img/android-step3-plus.jpg" alt="Нажмите +" onclick="openLightbox(this.src)"></div></div>
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img"><img src="img/android-step3-import.jpg" alt="Импорт из буфера обмена" onclick="openLightbox(this.src)"></div></div>
         </div>
       </div>
 
@@ -656,7 +697,7 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Выберите сервер и подключитесь</h4>
           <p>На главном экране появится подписка PlaceVPN с двумя серверами (Финляндия и Нидерланды). Выберите ближайшую локацию и нажмите <strong>синюю кнопку</strong> для подключения. При первом запуске разрешите VPN-конфигурацию.</p>
-          <div class="screenshot-img"><img src="img/android-step4-connect.jpg" alt="Выбор сервера и подключение" onclick="openLightbox(this.src)"></div>
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img"><img src="img/android-step4-connect.jpg" alt="Выбор сервера и подключение" onclick="openLightbox(this.src)"></div></div>
         </div>
       </div>
     </div>
@@ -781,9 +822,9 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Скачайте Hiddify</h4>
           <p>Перейдите на <a href="https://github.com/hiddify/hiddify-app/releases/latest" target="_blank" style="color:var(--accent)">GitHub</a> и скачайте <strong>Hiddify-Windows-Setup-x64.exe</strong>. Установите программу. Если Windows покажет предупреждение SmartScreen — нажмите <strong>«Подробнее» → «Выполнить в любом случае»</strong>.</p>
-          <div class="screenshot-img">
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img">
             <img src="img/win-step1-download.jpg" alt="Скачиваем Hiddify с GitHub" loading="lazy">
-          </div>
+          </div></div>
         </div>
       </div>
 
@@ -792,9 +833,9 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Купите подписку через бота</h4>
           <p>Откройте <a href="https://t.me/VPNplacewowbot" style="color:var(--accent)">@VPNplacewowbot</a> в Telegram. Выберите тариф и оплатите картой любого банка РФ через ЮKassa.</p>
-          <div class="screenshot-img">
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img">
             <img src="img/win-step2-bot.jpg" alt="Тарифы PlaceVPN в Telegram-боте" loading="lazy">
-          </div>
+          </div></div>
         </div>
       </div>
 
@@ -803,9 +844,9 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Скопируйте ссылку подписки</h4>
           <p>После оплаты бот пришлёт ссылку подписки. Нажмите на неё — она скопируется в буфер обмена.</p>
-          <div class="screenshot-img">
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img">
             <img src="img/win-step3-copy.jpg" alt="Копируем ссылку подписки" loading="lazy">
-          </div>
+          </div></div>
         </div>
       </div>
 
@@ -814,9 +855,9 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Добавьте подписку в Hiddify</h4>
           <p>Откройте Hiddify, нажмите <strong>«+»</strong> в правом верхнем углу, затем <strong>«Буфер обмена»</strong>. Подписка импортируется автоматически — появятся два сервера PlaceVPN.</p>
-          <div class="screenshot-img">
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img">
             <img src="img/win-step4-clipboard.jpg" alt="Импорт подписки в Hiddify" loading="lazy">
-          </div>
+          </div></div>
         </div>
       </div>
 
@@ -825,9 +866,9 @@ footer a:hover { color: var(--accent); }
         <div class="guide-step-text">
           <h4>Подключайтесь!</h4>
           <p>Нажмите большую кнопку на главном экране. Статус изменится на <strong>«Подключено»</strong> — VPN работает. Hiddify автоматически выберет лучший сервер.</p>
-          <div class="screenshot-img">
+          <span class="screenshot-toggle" onclick="toggleScreen(this)"><span class="arrow">▶</span> Показать скриншот</span><div class="screenshot-collapsible"><div class="screenshot-img">
             <img src="img/win-step5-connected.png" alt="Hiddify подключён к PlaceVPN" loading="lazy">
-          </div>
+          </div></div>
         </div>
       </div>
     </div>
@@ -1017,6 +1058,14 @@ document.querySelectorAll('.guide-tab').forEach(tab => {
 <script>
 function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').style.display='flex'}
 function closeLightbox(){document.getElementById('lightbox').style.display='none'}
+</script>
+
+<script>
+function toggleScreen(el){
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+  el.querySelector('.arrow').textContent = el.classList.contains('open') ? '▼' : '▶';
+}
 </script>
 </body>
 </html>
